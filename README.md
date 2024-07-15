@@ -19,7 +19,7 @@ sudo chmod +x cfw
 ```
 + 此时将有一个可视化的界面
   + 配置中填入订阅链接，后下载
-  + 不会用订阅链接的看这个：[魔戒 12块130G不限时间](https://mojie.app/register?aff=LVmo5wx7)
+  + 不会用订阅链接的看这个：[魔戒 15块130G不限时间](https://mojie.app/register?aff=LVmo5wx7)
 + 设置代理端口
   + Ubuntu-->设置-->网络-->网络代理-->手动
 ```json
