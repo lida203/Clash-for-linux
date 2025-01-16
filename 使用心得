@@ -1,0 +1,43 @@
+基本上按照这个就行
+不行就测试
+curl -v http://example.com
+curl -v https://example.com
+curl -x http://127.0.0.1:7890 http://example.com
+有报错就修改地址
+export http_proxy=http://127.0.0.1:7890
+export https_proxy=http://127.0.0.1:7890
+export no_proxy="localhost,127.0.0.0/8,::1"
+再次测试
+curl -v https://example.com
+curl http://ipinfo.io/ip
+注意,全部成功以后,也不能ping通外网,因为代理不支持这个指令,使用以下指令测试代理
+curl -v https://www.google.com
+
+
+
+然后就是git,还是用不了https的git指令,只能换成了ssh
+curl -v https://github.com 测试git网址能否链接,然后配置代理
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+验证代理
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+接着可以使用https的git指令
+
+换成ssh
+生成ssh密钥,分号里面随便写
+ssh-keygen -t ed25519 -C "your_email@example.com"
+添加到github
+cat ~/.ssh/id_ed25519.pub
+远程库添加ssh密钥,设置,ssh,新建ssh密钥,添加
+
+把当前的https连接改成ssh
+git remote set-url origin git@github.com:lida203/Allwinner-Linux-port.git
+测试连接
+ssh -T git@github.com
+如果成功，你会看到：
+Hi lida203! You've successfully authenticated, but GitHub does not provide shell access.
+
+然后都配置完了,发现还是上不了外网,没法直接搜索,因为狗屎的火狐
+所以下载chome,教程这里不写了,直接下载下来就可以上外网
+
